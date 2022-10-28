@@ -1,12 +1,12 @@
 /**
  *Definition for a binary tree node.
  *struct TreeNode {
- *    int val;
- *    TreeNode * left;
- *    TreeNode * right;
- *    TreeNode() : val(0), left(nullptr), right(nullptr) {}
- *    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
- *    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ *int val;
+ *TreeNode * left;
+ *TreeNode * right;
+ *TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  *};
  */
 class Solution
@@ -21,18 +21,36 @@ class Solution
         }
     public:
 
-        bool isBalanced(TreeNode *root){
-    if (root == nullptr) return true;
+        pair<bool, int> isBalencedFast(TreeNode *root)
+        {
+            if (root == nullptr)
+            {
+                pair<bool, int> p = make_pair(true, 0);
+                return p;
+            }
 
-    bool left = isBalanced(root->left);
-    bool right = isBalanced(root->right);
-    bool diff = abs(height(root->left) - height(root->right)) <= 1;
+            pair<bool, int> left = isBalencedFast(root->left);
+            pair<bool, int> right = isBalencedFast(root->right);
 
-    if (left && right && diff)
+            bool leftans = left.first;
+            bool rightans = right.first;
+            bool diff = abs(left.second - right.second) <= 1;
+
+            pair<bool, int> ans;
+            ans.second = max(left.second, right.second) + 1;
+
+            if (leftans && rightans && diff)
+            {
+                ans.first = true;
+            }
+            else
+            {
+                ans.first= false;
+            }
+            return ans;
+        }
+    bool isBalanced(TreeNode *root)
     {
-        return 1;
+        return isBalencedFast(root).first;
     }
-    return false;
-
-}
 };

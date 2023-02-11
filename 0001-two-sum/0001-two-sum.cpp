@@ -8,8 +8,7 @@ public:
             int k=target-nums[i];
             for(int j=i+1;j<size;j++)
             {
-                if(nums[j]==k)
-                {
+                if(nums[j]==k){
                     index.push_back(i);
                     index.push_back(j);
                     break;

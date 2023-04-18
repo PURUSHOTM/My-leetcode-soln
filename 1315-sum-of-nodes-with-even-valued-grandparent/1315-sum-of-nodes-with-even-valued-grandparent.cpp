@@ -19,8 +19,7 @@ public:
                 sum += root->right->right->val;
             }
         }
-        sum += sumEvenGrandparent(root->left);
-        sum += sumEvenGrandparent(root->right);
-        return sum;
-    }
+         
+        return sum + sumEvenGrandparent(root->left) + sumEvenGrandparent(root->right);
+    } 
 };

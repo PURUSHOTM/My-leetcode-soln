@@ -119,7 +119,6 @@ public:
         if(root == NULL ) return ;
         if(root->left == NULL && root-> right == NULL) {
             ans.push_back(root->data);
-            // return;
         }
         traverseLeaf(root->left  , ans);
         traverseLeaf(root->right  , ans);
@@ -132,8 +131,8 @@ public:
             traverseRight(root->right , ans);
         else
             traverseRight(root->left , ans);
-            
         ans.push_back(root->data);
+            
         
     }
     vector <int> boundary(Node *root)

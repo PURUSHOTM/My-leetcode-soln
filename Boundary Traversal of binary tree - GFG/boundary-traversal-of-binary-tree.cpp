@@ -119,7 +119,7 @@ public:
         if(root == NULL ) return ;
         if(root->left == NULL && root-> right == NULL) {
             ans.push_back(root->data);
-            return;
+            // return;
         }
         traverseLeaf(root->left  , ans);
         traverseLeaf(root->right  , ans);

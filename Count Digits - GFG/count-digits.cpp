@@ -10,10 +10,10 @@ public:
         int temp = N;
         while(temp){
             int rem = temp%10;
-            if(rem != 0){
-            if(N%rem == 0  ){
+            // if(rem != 0){
+            if(rem!= 0 && N%rem == 0){
                 count++;
-            }
+            // }
             }
             temp = temp/10;
         }

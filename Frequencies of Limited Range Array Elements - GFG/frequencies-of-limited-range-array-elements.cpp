@@ -9,9 +9,9 @@ public:
         unordered_map<int, int> mp;
 
          for (int i = 0; i < N; i++) {
-            if (arr[i] <= N) {
+            // if (arr[i] <= N) {
                 mp[arr[i]]++;
-            }
+            // }
         }
 
          for (int i = 0; i < N; i++) {

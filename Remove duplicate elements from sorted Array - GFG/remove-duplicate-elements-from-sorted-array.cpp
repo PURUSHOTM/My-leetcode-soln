@@ -11,15 +11,15 @@ using namespace std;
 class Solution{
 public:
     int remove_duplicate(int a[],int n){
-        int id = 0;
+        int j= 0;
         for(int i = 0; i<n; i++){
-            if(a[i] != a[id]){
-                id++;
+            if(a[i] != a[j]){
+                a[j+1] = a[i];
+                j++;
             }
-            a[id] = a[i];
         }
     
-        return id+1;
+        return j+1;
     }
 };
 

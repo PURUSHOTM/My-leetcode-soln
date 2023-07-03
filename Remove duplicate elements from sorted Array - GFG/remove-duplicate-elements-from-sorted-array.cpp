@@ -13,7 +13,7 @@ public:
     int remove_duplicate(int a[],int n){
         int id = 0;
         for(int i = 0; i<n; i++){
-            if(a[id] != a[i]){
+            if(a[i] != a[id]){
                 id++;
             }
             a[id] = a[i];

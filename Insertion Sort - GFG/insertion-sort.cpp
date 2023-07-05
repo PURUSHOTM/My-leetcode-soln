@@ -21,10 +21,13 @@ class Solution
     {
         int j = i;
         int temp = arr[i];
-        while(j>0 && arr[j-1] > temp){
-            // if(arr[j-1] > temp){
+        while(j>0){
+            if(arr[j-1] > temp){
                 arr[j] = arr[j-1];
-            // }
+            }
+            else{
+                break;
+            }
             j--;
         }
         arr[j] = temp;
@@ -39,29 +42,7 @@ class Solution
     } 
 };
 
-
-
-
-
-// class Solution {
-// public:
-//     void insert(int arr[], int n, int i) {
-//         int j = i;
-//         int key = arr[i]; // Store the current element to be inserted
-//         while (j > 0 && arr[j - 1] > key) {
-//             arr[j] = arr[j - 1]; // Shift elements greater than the key to the right
-//             j--;
-//         }
-//         arr[j] = key; // Insert the key at its correct position
-//     }
-
-//     // Function to sort the array using insertion sort algorithm.
-//     void insertionSort(int arr[], int n) {
-//         for (int i = 1; i < n; i++) {
-//             insert(arr, n, i);
-//         }
-//     }
-// };
+ 
 
 
 //{ Driver Code Starts.

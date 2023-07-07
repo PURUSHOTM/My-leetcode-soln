@@ -41,8 +41,12 @@ class Solution
             ans.push_back(arr[j]);
             j++;
         }
-        for(int i = l ; i<= r; i++){
-            arr[i] = ans[i-l];
+        // for(int i = l ; i<= r; i++){
+        //     arr[i] = ans[i-l];
+        // }
+        
+        for(int i = 0,j = l; i<(r-l)+1; i++, j++){
+            arr[j]= ans[i];
         }
     }
     public:

@@ -19,21 +19,35 @@ class Solution
     public:
     void insert(int arr[],int n , int i)
     {
+        // if(i == n) return;
+        // int j = i;
+        // int temp = arr[i];
+        // while(j>0){
+        //     if(arr[j-1] > temp){
+        //         arr[j] = arr[j-1];
+        //     }
+        //     else{
+        //         break;
+        //     }
+        //     j--;
+        // }
+        // arr[j] = temp;
+        
+         
+        if (i == n) return;
+
         int j = i;
-        int temp = arr[i];
-        while(j>0){
-            if(arr[j-1] > temp){
-                arr[j] = arr[j-1];
-            }
-            else{
-                break;
-            }
+        while (j > 0 && arr[j - 1] > arr[j]) {
+            int temp = arr[j - 1];
+            arr[j - 1] = arr[j];
+            arr[j] = temp;
             j--;
         }
-        arr[j] = temp;
+
+        insert(arr, n , i+1);
     } 
-     public:
-     void insertionSort(int arr[], int n)
+    public:
+    void insertionSort(int arr[], int n)
     {
         for(int i = 1; i<n; i++){
              insert(arr , n , i); 

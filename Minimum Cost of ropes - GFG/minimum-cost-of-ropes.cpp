@@ -15,7 +15,7 @@ class Solution
         }
         long long sum = 0;
         long long temp = 0;
-        while(pq.size()>=2){
+        while(pq.size()>1){
             sum += pq.top();
             pq.pop();
             sum += pq.top();
